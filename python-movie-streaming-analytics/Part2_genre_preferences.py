@@ -1,12 +1,13 @@
-genres_list = []
-genres_set = set()
+inp = input("Enter 10 genres separated by commas: ")
+
+items = inp.split(",")
+
+genres_list = [genre.strip() for genre in items]
+
+genres_set = set(genres_list)
+
 genres_count = {}
-
-for i in range(10):
-    genre = input(f"Enter genre {i + 1}: ")
-    genres_list.append(genre)
-    genres_set.add(genre)
-
+for genre in genres_list:
     if genre in genres_count:
         genres_count[genre] += 1
     else:
