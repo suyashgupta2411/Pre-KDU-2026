@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Part2TicketCategories {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,10 +18,7 @@ public class Part2TicketCategories {
         for (String category : items) {
             String c = category.trim();   
 
-            
             list.add(c);
-
-            
             set.add(c);
 
            

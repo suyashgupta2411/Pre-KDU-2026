@@ -27,7 +27,7 @@ public class Part3PopularMerchandise {
 
             sc.close();
         } catch (Exception e) {
-            System.out.println("File error.");
+            System.out.println("FileNotFoundException");
         }
 
 
