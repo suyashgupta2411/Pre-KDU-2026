@@ -8,22 +8,28 @@ public class Part2TicketCategories {
         HashSet<String> set = new HashSet<String>();
         HashMap<String, Integer> map = new HashMap<String, Integer>();
 
-        // Input
-        for (int i = 0; i < 10; i++) {
-            System.out.print("Enter ticket category " + (i + 1) + ": ");
-            String category = sc.nextLine();
+        
+        System.out.println("Enter 10 ticket categories separated by commas:");
+        String input = sc.nextLine();
 
-            // Adding to ArrayList
-            list.add(category);
+        // Split into items
+        String[] items = input.split(",");
 
-            // Adding to HashSet
-            set.add(category);
+        
+        for (String category : items) {
+            String c = category.trim();   
 
-            // Count stored in HashMap
-            if (map.containsKey(category)) {
-                map.put(category, map.get(category) + 1);
+            
+            list.add(c);
+
+            
+            set.add(c);
+
+           
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
             } else {
-                map.put(category, 1);
+                map.put(c, 1);
             }
         }
 
