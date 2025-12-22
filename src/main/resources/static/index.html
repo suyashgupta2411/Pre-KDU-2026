@@ -21,11 +21,17 @@
   </div>
 
   <div class="card">
-    <h2>Books</h2>
-    <button onclick="loadBooks()">Show All Books</button>
+  <h2>Search Book</h2>
 
-    <ul id="bookList"></ul>
-  </div>
+  <input id="searchId" placeholder="Search by Book ID" />
+  <button onclick="searchById()">Search by ID</button>
+
+  <input id="searchIsbn" placeholder="Search by ISBN" />
+  <button onclick="searchByIsbn()">Search by ISBN</button>
+
+  <p id="searchResult"></p>
+</div>
+
 
   <script src="script.js"></script>
 </body>

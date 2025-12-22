@@ -46,3 +46,38 @@ function clearInputs() {
   document.getElementById("price").value = "";
   document.getElementById("isbn").value = "";
 }
+function searchById() {
+  const id = document.getElementById("searchId").value;
+  const result = document.getElementById("searchResult");
+
+  fetch(`/api/books/${id}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Book not found");
+      return res.json();
+    })
+    .then(book => {
+      result.textContent =
+        `Found: ${book.title} by ${book.author} (₹${book.price})`;
+    })
+    .catch(() => {
+      result.textContent = "Book not found with this ID";
+    });
+}
+
+function searchByIsbn() {
+  const isbn = document.getElementById("searchIsbn").value;
+  const result = document.getElementById("searchResult");
+
+  fetch(`/api/books/search?isbn=${isbn}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Book not found");
+      return res.json();
+    })
+    .then(book => {
+      result.textContent =
+        `Found: ${book.title} by ${book.author} (₹${book.price})`;
+    })
+    .catch(() => {
+      result.textContent = "Book not found with this ISBN";
+    });
+}
