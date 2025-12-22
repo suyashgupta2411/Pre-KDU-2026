@@ -20,6 +20,13 @@ public class BookRepository {
     public Optional<Book> findById(Long id) {
         return Optional.ofNullable(store.get(id));
     }
+    
+    public Optional<Book> findByIsbn(String isbn) {
+    return store.values()
+            .stream()
+            .filter(book -> isbn.equals(book.getIsbn()))
+            .findFirst();
+}
 
     public Collection<Book> findAll() {
         return store.values();

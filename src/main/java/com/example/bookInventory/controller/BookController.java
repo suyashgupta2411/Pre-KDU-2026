@@ -28,6 +28,11 @@ public class BookController {
         return ResponseEntity.ok(service.getBookById(id));
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<Book> getBookByIsbn(@RequestParam String isbn) {
+    return ResponseEntity.ok(service.getBookByIsbn(isbn));
+    }
+
     @GetMapping
     public ResponseEntity<Collection<Book>> getAllBooks() {
         return ResponseEntity.ok(service.getAllBooks());

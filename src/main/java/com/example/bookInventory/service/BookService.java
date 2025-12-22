@@ -29,6 +29,12 @@ public class BookService {
         return repository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException("Book with id " + id + " not found"));
     }
+    
+    public Book getBookByIsbn(String isbn) {
+    return repository.findByIsbn(isbn)
+            .orElseThrow(() ->
+                new BookNotFoundException("Book with ISBN " + isbn + " not found"));
+    }
 
     public Collection<Book> getAllBooks() {
         return repository.findAll();
