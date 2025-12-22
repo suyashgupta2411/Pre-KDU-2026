@@ -1,0 +1,69 @@
+# =========================
+# Maven / Build
+# =========================
+target/
+*.jar
+*.war
+*.ear
+
+# =========================
+# Spring Boot
+# =========================
+logs/
+*.log
+
+# =========================
+# IDEs
+# =========================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+
+# Eclipse / STS
+.project
+.classpath
+.settings/
+
+# =========================
+# OS files
+# =========================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# =========================
+# Test & Coverage
+# =========================
+/build/
+/bin/
+
+# =========================
+# Node / Frontend (future-proof)
+# =========================
+node_modules/
+dist/
+coverage/
+
+# =========================
+# Docker (if added later)
+# =========================
+*.pid
