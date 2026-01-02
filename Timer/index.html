@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Timer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <div id="progress-circle">
+      <svg width="320" height="320">
+        <circle cx="160" cy="160" r="140" class="bg" />
+        <circle cx="160" cy="160" r="140" class="progress" />
+      </svg>
+
+      <div id="timer-display">25:00</div>
+    </div>
+
+    <div id="controls">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+    </div>
+
+ 
+    <div id="custom">
+      <input type="number" id="custom-minutes" placeholder="Minutes (1–60)" />
+      <button id="set-timer">Set Timer</button>
+    </div>
+
+    <!-- SESSION COUNTER -->
+    <p id="sessions">Sessions Completed: 0</p>
+
+  </div>
+
+  <audio id="alarm" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
