@@ -1,0 +1,28 @@
+.add-movie {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.add-movie input {
+  flex: 1;
+}
+
+.add-movie input,
+.add-movie select,
+.add-movie button {
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.add-movie button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-movie button:hover {
+  opacity: 0.9;
+}
