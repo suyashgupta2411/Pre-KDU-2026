@@ -4,6 +4,7 @@ import com.example.bookInventory.model.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Repository
 public class BookRepository {
@@ -19,6 +20,13 @@ public class BookRepository {
 
     public Optional<Book> findById(Long id) {
         return Optional.ofNullable(store.get(id));
+    }
+
+    public Collection<Book> findByAuthor(String author) {
+        return store.values()
+                .stream()
+                .filter(book -> author.equals(book.getAuthor()))
+                .collect(Collectors.toList());
     }
     
     public Optional<Book> findByIsbn(String isbn) {

@@ -28,7 +28,12 @@ public class BookController {
         return ResponseEntity.ok(service.getBookById(id));
     }
 
-    @GetMapping("/search")
+    @GetMapping("/{author}")
+    public ResponseEntity<Book> getBook(@PathVariable String author) {
+        return ResponseEntity.ok(service.getBookByAuthor(author));
+    }
+
+    @GetMapping("/search/{isbn}")
     public ResponseEntity<Book> getBookByIsbn(@RequestParam String isbn) {
     return ResponseEntity.ok(service.getBookByIsbn(isbn));
     }
