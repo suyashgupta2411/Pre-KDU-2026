@@ -23,19 +23,22 @@ public class BookController {
         return new ResponseEntity<>(service.addBook(book), HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Book> getBook(@PathVariable Long id) {
+  
+    @GetMapping("/id/{id}")
+    public ResponseEntity<Book> getBookById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getBookById(id));
     }
 
-    @GetMapping("/{author}")
-    public ResponseEntity<Book> getBook(@PathVariable String author) {
-        return ResponseEntity.ok(service.getBookByAuthor(author));
+  
+    @GetMapping("/author/{author}")
+    public ResponseEntity<Collection<Book>> getBookByAuthor(@PathVariable String author) {
+        return ResponseEntity.ok(service.getBooksByAuthor(author));
     }
 
-    @GetMapping("/search/{isbn}")
-    public ResponseEntity<Book> getBookByIsbn(@RequestParam String isbn) {
-    return ResponseEntity.ok(service.getBookByIsbn(isbn));
+    
+    @GetMapping("/isbn/{isbn}")
+    public ResponseEntity<Book> getBookByIsbn(@PathVariable String isbn) {
+        return ResponseEntity.ok(service.getBookByIsbn(isbn));
     }
 
     @GetMapping

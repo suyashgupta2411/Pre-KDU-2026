@@ -27,19 +27,22 @@ public class BookService {
 
     public Book getBookById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new BookNotFoundException("Book with id " + id + " not found"));
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with id " + id + " not found"));
     }
 
-    public Book getBookByAuthor(String author) {
-        return repository.findByAuthor(author)
-                .orElseThrow(() ->
-                    new BookNotFoundException("Book by author " + author + " not found"));
+    public Collection<Book> getBooksByAuthor(String author) {
+        Collection<Book> books = repository.findByAuthor(author);
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("No books found for author " + author);
+        }
+        return books;
     }
-    
+
     public Book getBookByIsbn(String isbn) {
-    return repository.findByIsbn(isbn)
-            .orElseThrow(() ->
-                new BookNotFoundException("Book with ISBN " + isbn + " not found"));
+        return repository.findByIsbn(isbn)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with ISBN " + isbn + " not found"));
     }
 
     public Collection<Book> getAllBooks() {
