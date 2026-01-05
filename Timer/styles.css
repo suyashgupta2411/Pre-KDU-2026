@@ -1,0 +1,112 @@
+
+* {
+  box-sizing: border-box;
+  font-family: "BBH Bartle", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: #001F2B;
+  color: white;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+#progress-circle {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 12;
+}
+
+circle.bg {
+  stroke: #222;
+}
+
+circle.progress {
+  stroke: white;
+  stroke-dasharray: 880;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+
+#timer-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(2px);
+}
+
+
+#controls {
+  display: flex;
+  gap: 14px;
+}
+
+button {
+  background: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 18px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#custom {
+  display: flex;
+  gap: 14px;
+}
+
+#custom input {
+  width: 180px;         
+  padding: 10px;
+  font-size: 1rem;
+  background: black;
+  color: white;
+  border: 1px solid #777;
+  text-align: center;
+}
+
+#custom input::placeholder {
+  color: #aaa;
+}
+
+#set-timer {
+  padding: 10px 18px;
+  font-size: 1rem;
+  background: #222;     
+  color: white;
+  border: 1px solid white;
+}
+
+#sessions {
+  opacity: 0.7;
+  font-size: 0.95rem;
+}

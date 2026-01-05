@@ -1,0 +1,73 @@
+.movie {
+  background: var(--card);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-info {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.movie-name {
+  font-weight: 500;
+}
+
+.rating {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* STRIKETHROUGH — applies to name + rating */
+.movie-info.watched {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+
+  transition: all 0.15s ease;
+}
+
+/* TICK */
+.tick {
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+
+.tick.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* DELETE */
+.delete {
+  color: var(--danger);
+}
+
+.delete:hover {
+  background: rgba(255, 77, 77, 0.1);
+}
